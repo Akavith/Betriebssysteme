@@ -1,0 +1,18 @@
+3.2
+1)
+Interrupt tritt auf
+Laufender Maschinenbefehl wird noch zu Ende geführt, nieder-/gleichwertige Interrupts werden deaktiviert, Registersatz wird auf Stack gerettet
+Programm adressiert Interrupt über Interrupt-Vektortabelle (an ISR)
+Ausführung der ISR (Interrupt Service Routine)
+Alter Zustand wird wiederhergestellt
+Normale Programmbearbeitung wird fortgesetzt
+
+2)
+Interrupt-Vektor (Adresse des Int.Handlers) zusammengesetzt aus 
+- I-Register: oberer Teil der Adresse der Interrupt-Handler-Tabelle 
+- Adressteil vom Peripheriegerät (unterer Teil)
+
+3)
+Das Betriebssystem erkennt, ob es sich in einer Interruptbearbeitung befindet, durch das Interruptregister (auf der CPU?)
+Dort stehen auch Informationen zu der Priorisierung der Interrupts. Ist man beispielsweise in einer Interruptbearbeitung, hängt eine weitere Bearbeitung 
+bzw. Wechsel auf die Bearbeitung eines höherwertigen Interrupts von dem Interruptregister ab
