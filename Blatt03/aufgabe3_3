@@ -1,0 +1,96 @@
+Funktion "create_process()":
+
+Es wird ein neuer Prozess erstellt und je nach Anfangsphase (cpu / IO) entsprechend konfiguriert und in die passende Liste eingefügt.
+
+Funktion "run_current()":
+
+In der Simulation wird der aktuelle (aktive) Prozess eine Zeiteinheit simuliert und anschließend auf den neuen korrekten Status gesetzt.
+
+D.h. die Rest Cpu Dauer wird dekrementiert und dann ggf. bei einer Restzeit von 0 auf "blocked" oder bei einer Restzeit von -1 (prozess ende) auf "done" gesetzt.
+
+Funktion "update_blocked_processes()":
+
+Es wird für alle blockierten Prozesse (also die, die in der Liste der blockierten sind) und die, die nicht der aktive Prozess sind, eine Zeiteinheit simuliert und dementsprechend der status anschließend wieder aktualisiert.
+
+
+
+SJF:
+
+def schedule():
+  # Implementation des FCFS-Schedulers (First Come, First Served)
+  global current, tasks, runqueue, blocked, current, cputime
+  
+  # falls aktueller Prozess noch bereit: weitermachen (FCFS)
+  if (current >= 0) and (get_status(current) == S_ACTIVE):
+    choice = current
+  # falls weder bereite noch blockierte Prozesse: Ende
+  elif runqueue + blocked + futureprocesses(cputime) == []:
+    choice = -2
+  # falls nicht: nehme kleinsten Prozess aus Runqueue
+  elif (runqueue != []):
+    # neuer Code
+
+    # empty timestamp
+    time = -2
+
+    # iterating variable for array access
+    i = 0
+
+
+    for e in runqueue:
+
+      # first value will be set
+      if time == -2 :
+        time = tasks[e]["behavior"][0]
+        choice = runqueue[i]
+
+      # if new value shorter than old value -> replace timestamp and pid
+      if time > tasks[e]["behavior"][0]:
+		time = tasks[e]["behavior"][0]
+        choice = runqueue[i]
+
+      i += 1
+
+  else:
+  # falls alle blockiert: idlen!
+    choice = -1  #  alle blockiert
+  return choice
+
+
+SRT:
+
+def schedule():
+  # Implementation des FCFS-Schedulers (First Come, First Served)
+  global current, tasks, runqueue, blocked, current, cputime
+
+  # falls weder bereite noch blockierte Prozesse: Ende
+  if runqueue + blocked + futureprocesses(cputime) == []:
+    choice = -2
+  # falls nicht: nehme kleinsten Prozess aus Runqueue
+  elif (runqueue != []):
+    # neuer Code
+
+    # empty timestamp
+    time = -2
+    # iterating variable for array access
+    i = 0
+    for e in runqueue:
+
+      # first value will be set
+      if time == -2 :
+        time = tasks[e]["behavior"][0]
+        choice = runqueue[i]
+
+      # if new value shorter than old value -> replace timestamp and pid
+      if time > tasks[e]["behavior"][0]:
+		time = tasks[e]["behavior"][0]
+        choice = runqueue[i]
+
+      i += 1
+
+  else:
+  # falls alle blockiert: idlen!
+    choice = -1  #  alle blockiert
+  return choice
+
+
