@@ -1,0 +1,14 @@
+1a/b) 	Ein Semaphoren Synchronisationsobjekt für das Buch 1 mit 3 Exemplaren.
+	Ein Semaphoren Synchronisationsobjekt für das Buch 2 mit 2 Exemplaren.
+	Ein Semaphoren Synchronisationsobjekt für das Buch 3 mit 2 Exemplaren.
+
+2) Ein Student betritt die Bibliothek. 
+Er fragt zuerst die Semaphore von Buch 1 ab. Ist noch ein Exemplar verfügbar, leiht er sich dieses aus.
+Nun befindet er sich im weiteren Bereich wo er nach dem Buch 2  fragt. Bekommt er dieses nicht wartet er bis ein anderer Student Buch 2 abgegeben hat.
+Ansonsten versucht er nun das Buch 3 auszuleihen. Gelingt dies muss er nicht warten und gibt nach seiner Lesezeit
+alle Bücher wieder frei ( Semaphoren haben Platz für einen neuen)
+
+4)
+a) Es werden alle bedient. Bis auf zufällige Ausreißer haben alle Stundenten gleich häufig bedient.
+b) Nicht gleichmäßig weil die Studenten Threads zufällig dran kommen. Aber längerfristig gesehen gleicht sich das aus.
+c) Ja, aber nicht immer in gleichem zeitlichen Abstand.
