@@ -1,0 +1,15 @@
+Client:
+socket() : creates a socket
+connect() : connects to a remote socket
+send() : Socket sends Data
+recv() : Socket is recieving Data
+close () : closes a socket. 
+
+Server:
+socket() :creates a socket
+bind() : Binding the address to a socket
+listen() : The Server socket is listening for an incomming connection.
+accept() : A socket must be bound to an address and listen to a connection. Accept() returns the connection and the address.
+send() :  The socket sends Data.
+recv() : for recieving data. The socket waits for input from extern.
+close() : closes a socket but not always immediatley. to close it ommediatley use shutdown() bevore close. A socket must always be closed.
