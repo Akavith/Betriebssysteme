@@ -2,7 +2,7 @@ import socket
 import time
 
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clientsocket.connect(('localhost', 8089))
+clientsocket.connect((socket.gethostname(), 8089))
 
 while 1:
 
@@ -23,14 +23,17 @@ while 1:
     print('Please enter value 2:')
     val2 = input()
 
-    cmd_send = bytes([0])
-    if cmd == 2:
-        cmd_send = bytes([1])
-    elif cmd == 3:
+
+    cmd_send = bytes([1])
+    if cmd == "2":
         cmd_send = bytes([2])
+    elif cmd == "3":
+        cmd_send = bytes([3])
     # sending information to client
 
+
     clientsocket.send(cmd_send)
+    clientsocket.send(bytes([0]))
     clientsocket.send(bytes(val1, encoding="utf-8"))
     clientsocket.send(bytes([0]))
     clientsocket.send(bytes(val2, encoding="utf-8"))
