@@ -5,4 +5,4 @@ Dies geschieht solange bis der Buffer wieder Platz für neue Daten hat. (Liegt a
 2.2) serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, gewünschteGröße) über die Socket Variable SO_RCVBUF.
 Diese Kann alternativ auch via socket.SO_RCVBUF = 1024 geändert werden
 
-2.3) (Die Maximal Puffergröße ist ein unsigned long also 2^64) oder 2^32-1 Bytes?
+2.3) Recv Buffer Size Max hängt von dem System ab. Hier 220kBytes ca.
