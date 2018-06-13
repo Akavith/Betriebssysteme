@@ -1,0 +1,27 @@
+3.1)
+Der virtuelle Adressraum ist 2^20 (20 Bit breite virtuelle Adresse)
+
+3.2)
+12 Bit für den Offset und 12 Bit für Seitenrahmennummer -> 2^24
+
+3.3)
+2^8 (Menge aller möglichen Eintragsnummern: 2 Hexa Zahlen = 8 Bit) * 4 (Bytes/Eintrag) = 1024 Byte = 1kB
+
+3.4)
+2B3 (Seitenrahmennummer vom Eintrag 1A) FFE ( Offset)
+
+3.5)
+a)
+Die Seite ist nicht im Speicher vorhanden, weswegen es einen Fehler gibt.
+
+b)
+Wir schreiben an die Adresse F24 555. Hierbei wird das Modify Bit gesetzt.
+
+3.6)
+
+
+Speicher Inhalt der Adresse auf die Platte (Sofern modify-Bit gesetzt).
+Aktualisiere die Seite (Present Bit auf 0 setzen u. a.)
+
+Falls neue anliegt:
+Lade neue Seite von der Platte in diese Eintragsnr und aktualisiere sie (Present Bit setzen)
