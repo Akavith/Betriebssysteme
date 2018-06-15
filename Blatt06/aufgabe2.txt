@@ -1,0 +1,35 @@
+51 Bit
+
+15 Bit Offset
+
+36 Bit übrig
+-> 12 Bit pro Seite
+
+
+Fragen:
+
+1. Wie groß ist der virtuelle Adressraum?
+	-> 2^36 Bit
+
+2. geben Sie das Format der virtuellen Adresse an, d.h. welche Bedeutung haben die Bits der
+Adresse ?
+	-> 12 Bit : 1. Seitentabelle
+	-> 12 Bit : 2. Seitentabelle
+	-> 12 Bit : 3. Seitentabelle
+	-> 15 Bit : Offset
+ 	-> insgesamt 51 Bit
+
+3. wieviele virtuelle Seiten gibt es maximal ?
+	-> 12 Bit Seitentabelle -> 4k Einträge
+	-> 4k Tabellen x 4k Tabellen * 4k Seiten
+	-> 64 Milliarden Seiten
+4. Beschreiben Sie den Ablauf einer Adreßübersetzung anhand einer Skizze
+	-> Siehe Folie 48
+
+5. wieviele Seitentabellen der verschiedenen Stufen gibt es ?
+	-> 1 Tabelle 1. Stufe
+	-> 4k Tabellen 2. Stufe
+	-> 16m Tabellen 3. Stufe
+
+6. wie groß sind diese Seitentabellen ?
+	-> 4k Einträge lang lang mit gesamtgröße von 32 kB.
